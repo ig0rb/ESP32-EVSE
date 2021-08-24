@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVSE</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- S navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">EVSE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID" aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarID">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- E navbar -->
+
+
+  <!-- S FORM -->
+  <div class="container-fluid !direction !spacing">
+
+      <!--<form action="/" method="POST" class="row g-3 needs-validation" novalidate> -->
+        <form action="/" method="POST">
+      <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">  
+          <div class="col-12">
+            <hr class="bg-danger border-2 border-top border-danger">
+            <h3>EVSE capacity</h3>
+          </div>
+
+          <div class="col-md-6">
+            <label for="power_max_grid" class="form-label">Max power from grid [kw/h]</label>
+            <input name="power_max_grid" type="text" class="form-control" id="power_max_grid" value="%POWER_MAX_GRID%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="power_max_evse" class="form-label">Max power for evse [kw/h]</label>
+            <input name="power_max_evse" type="text" class="form-control" id="power_max_evse" value="%POWER_MAX_EVSE%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-12">
+            <hr class="bg-danger border-2 border-top border-danger">
+            <h3>Power system capacity</h3>
+          </div>
+
+          <div class="col-md-6">
+            <label for="power_capacity_grid" class="form-label">Power max capacity grid [kw/h]</label>
+            <input name="power_capacity_grid" type="text" class="form-control" id="power_capacity_grid" value="%POWER_CAPACITY_GRID%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="power_capacity_evse" class="form-label">Power max capacity evse [kw/h]</label>
+            <input name="power_capacity_evse" type="text" class="form-control" id="power_capacity_evse" value="%POWER_CAPACITY_EVSE%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-12">
+            <hr class="bg-danger border-2 border-top border-danger">
+            <h3>EVSE operating modes limit</h3>
+          </div>
+
+          <div class="col-md-6">
+            <label for="mode_eco_evse_power_limit" class="form-label">Mode ECO EVSE power limit [kw/h]</label>
+            <input name="mode_eco_evse_power_limit" type="text" class="form-control" id="mode_eco_evse_power_limit" value="%MODE_ECO_EVSE_POWER_LIMIT%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="mode_solar_max_evse_power_limit" class="form-label">Mode SOLAR_MAX EVSE power limit [kw/h]</label>
+            <input name="mode_solar_max_evse_power_limit" type="text" class="form-control" id="mode_solar_max_evse_power_limit" value="%MODE_SOLAR_MAX_EVSE_POWER_LIMIT%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="mode_slow_evse_power_limit" class="form-label">Mode SLOW EVSE power limit [kw/h]</label>
+            <input name="mode_slow_evse_power_limit" type="text" class="form-control" id="mode_slow_evse_power_limit" value="%MODE_SLOW_EVSE_POWER_LIMIT%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="mode_fast_evse_power_limit" class="form-label">Mode FAST EVSE power limit [kw/h]</label>
+            <input name="mode_fast_evse_power_limit" type="text" class="form-control" id="mode_fast_evse_power_limit" value="%MODE_FAST_EVSE_POWER_LIMIT%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+ 
+          <div class="col-md-6">
+            <label for="mode_manual_evse_power_limit" class="form-label">Mode MANUAL EVSE power limit [kw/h]</label>
+            <input name="mode_manual_evse_power_limit" type="text" class="form-control" id="mode_manual_evse_power_limit" value="%MODE_MANUAL_EVSE_POWER_LIMIT%" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-12">
+            <hr class="bg-danger border-2 border-top border-danger">
+            <h3>EVSE default operating mode</h3>
+          </div>
+
+          <div class="col-md-12">
+
+            <select name="mode_evse_default" class="form-select" aria-label="EVSE mode default">
+              <option value="%EVSE_MODE_OFF%" %EVSE_MODE_OFF_SELECTED%>OFF</option>
+              <option value="%EVSE_MODE_LAST%" %EVSE_MODE_LAST_SELECTED%>LAST</option>
+              <option value="%EVSE_MODE_ECO%" %EVSE_MODE_ECO_SELECTED%>ECO</option>
+              <option value="%EVSE_MODE_SOLAR_MAX%" %EVSE_MODE_SOLAR_MAX_SELECTED%>ECO</option>
+              <option value="%EVSE_MODE_SLOW%" %EVSE_MODE_SLOW_SELECTED%>SLOW</option>
+              <option value="%EVSE_MODE_FAST%" %EVSE_MODE_FAST_SELECTED%>FAST</option>
+              <option value="%EVSE_MODE_MANUAL%" %EVSE_MODE_MANUAL_SELECTED%>MANUAL</option>
+            </select>
+            
+          <div class="col-12">
+            <hr class="bg-danger border-2 border-top border-danger">
+            <h3>EVSE development mode</h3>
+          </div>
+  
+          <div class="col-md-12">
+  
+            <select name="dev_mode" class="form-select" aria-label="EVSE mode default">
+              <option value="0" %DEV_MODE_SELECTED_OFF%>OFF</option>
+              <option value="1" %DEV_MODE_SELECTED_ON%>ON</option>
+            </select>
+          </div>            
+            <!--
+            <div class="form-check">
+              <input name="power_meter_ignore" class="form-check-input" type="checkbox" value="" id="power_meter_ignore" required %POWER_METER_IGNORE%>
+              <label class="form-check-label" for="power_meter_ignore">
+                Ignore powermeter
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+            -->
+          </div>
+
+
+            <!--
+            <div class="col-md-4">
+              <label for="validationCustomUsername" class="form-label">Username</label>
+              <div class="input-group">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
+              </div>
+            </div>
+          -->
+            <!--
+
+            <div class="col-md-6">
+              <label for="validationCustom03" class="form-label">City</label>
+              <input type="text" class="form-control" id="validationCustom03" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">State</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom05" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="validationCustom05" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+          -->
+          <div class="col-12">
+            <hr class="bg-danger border-2 border-top border-danger">
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+
+      </form>
+
+      <div class="row ${2 ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+        <div class="col">
+          <hr class="bg-danger border-2 border-top border-danger">
+
+          <div id="status">n/a</div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>   
+      $(document).ready(function() { 
+        console.log("ok document ready") ;
+
+        function update_status() {
+          $.ajax({
+            url: "/status",
+            dataType: "text",
+            cache: false,
+            success: function(data) {
+              console.log(data);
+              json = JSON.parse(data);
+              console.log(json);
+              jQuery("#status").html("<pre>" + JSON.stringify(json, null, 2) + "</pre>");
+
+            }             
+          });
+        }
+        update_status();
+        setInterval(update_status, 2500);
+        
+        
+      });
+  </script>
+
+</body>
+</html>
